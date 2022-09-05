@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 
 import BG_IMG from "../src/images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg";
 
-export default makeStyles(({theme})=>({
+export default makeStyles((theme)=>({
     background:{
         backgroundImage:`url(${BG_IMG})`,
         width:"100%",
@@ -18,8 +18,9 @@ export default makeStyles(({theme})=>({
         // marginTop:40
     },
     // [theme.breakpoints.down("sm")]:{
-    //     mainContainer:{
-    //         flexDirection:"column-reverse"
-    //     }
-    // },
+    //     // mainContainer:{
+    //     //     flexDirection:"column-reverse"
+    //     // }
+    // }
+    
 })) 
