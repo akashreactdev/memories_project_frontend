@@ -12,19 +12,25 @@ export const authLogOut = () => {
     return{
         type:LOGOUT,
     }
-}
+}   
 
-export const signup = (data,navigate) => async(dispatch) =>  {
+export const signup = (formData,navigate) => async(dispatch) =>  {
     try{
-        dispatch({type:SIGN_UP,payload:data})
+        const {data} = await api.signUp(formData)
+        console.log("formData",data)
+        dispatch({type:AUTH,payload:data})
+        navigate("/")
     }catch(error){
         console.log(error)
     }
 }
 
-export const signin = (data,navigate) => async(dispatch) => {
+export const signin = (formData,navigate) => async(dispatch) => {
     try{
-        dispatch({type:SIGN_IN,payload:data})
+        const {data} = await api.signIn(formData)
+        console.log("signin",data)
+        dispatch({type:AUTH,payload:data})
+        navigate('/')
     }catch(error){
         console.log(error)
     }

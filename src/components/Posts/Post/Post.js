@@ -44,11 +44,11 @@ const Post = ({memoriesPost,setCurrentId}) => {
       <Typography className={classes.title} variant="body2" component="p" color="GrayText" >{memoriesPost.message}</Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button onClick={()=>onClickLikePost(memoriesPost._id,memoriesPost.likeCount)} size='small' color='primary'>
-          <ThumbUpAltIcon fontSize='medium'/>Like {memoriesPost.likeCount}
+        <Button startIcon={<ThumbUpAltIcon/>} onClick={()=>onClickLikePost(memoriesPost._id,memoriesPost.likeCount)} size='medium' color='primary'>
+          Like {memoriesPost.likeCount}
         </Button>
-        <Button size='small' onClick={()=>onClickDeletePost(memoriesPost._id)} color='primary'>
-          <DeleteIcon fontSize='medium'/>Delete
+        <Button size='medium' startIcon={<DeleteIcon/>} onClick={()=>onClickDeletePost(memoriesPost._id)} color='primary'>
+          Delete
         </Button>
       </CardActions>
     </Card>

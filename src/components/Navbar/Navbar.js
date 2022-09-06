@@ -17,6 +17,7 @@ const Navbar = () => {
   const location = useLocation()
 
  const [user,setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+//  console.log("user",user.result.name)
  
   useEffect(()=>{
     const token = user?.token 

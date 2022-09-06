@@ -56,7 +56,28 @@ const Auth = () => {
 
   
 
-  const onChangeInput = () => {};
+  const onChangeFirstNameInput = (e) => {
+    setFormData({...formData,firstName:e.target.value})
+  }
+
+  const onChangeLastNameInput = (e) => {
+    setFormData({...formData,lastName:e.target.value})
+
+  }
+
+  const onChangeEmailInput = (e) => {
+    setFormData({...formData,email:e.target.value})
+
+  }
+
+  const onChangePasswordInput = (e) => {
+    setFormData({...formData,password:e.target.value})
+    
+  }
+
+  const onChangeConfirmPassword = (e) => {
+    setFormData({...formData,confirmPassword:e.target.value})
+  }
 
   const switchMode = () => {
     setIsSignUp(!isSignUp);
@@ -107,27 +128,27 @@ const Auth = () => {
                   lable="First Name"
                   type="text"
                   half
-                  handleChange={onChangeInput}
+                  handleChange={onChangeFirstNameInput}
                 />
                 <Input
                   name="lastName"
                   lable="Last Name"
                   type="text"
                   half
-                  handleChange={onChangeInput}
+                  handleChange={onChangeLastNameInput}
                 />
               </>
             )}
             <Input
               name="email"
               lable="Email Address"
-              handleChange={onChangeInput}
+              handleChange={onChangeEmailInput}
               type="email"
             />
             <Input
               name="password"
               lable="Password"
-              handleChange={onChangeInput}
+              handleChange={onChangePasswordInput}
               type={showPassword ? "text" : "password"}
               handleShowPassword={() => setShowPassword(!showPassword)}
             />
@@ -135,7 +156,7 @@ const Auth = () => {
               <Input
                 name="confirmPassword"
                 lable="Repeat Password"
-                handleChange={onChangeInput}
+                handleChange={onChangeConfirmPassword}
                 type="password"
               />
             )}
